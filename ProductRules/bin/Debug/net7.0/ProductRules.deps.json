@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "ProductRules/1.0.0": {
+        "dependencies": {
+          "RuleService": "1.0.0"
+        },
+        "runtime": {
+          "ProductRules.dll": {}
+        }
+      },
+      "RuleService/1.0.0": {
+        "runtime": {
+          "RuleService.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ProductRules/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RuleService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
