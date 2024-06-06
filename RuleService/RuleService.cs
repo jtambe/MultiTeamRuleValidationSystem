@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RuleService
 {
-    public partial class RuleService
+    public interface IRuleService
+    {
+        public List<string> Violations(MyModel model);
+    }
+
+    public partial class RuleService : IRuleService
     {
 
         public List<string> Violations(MyModel model)
@@ -13,7 +19,7 @@ namespace RuleService
 
             var interfaces = this.GetType().GetInterfaces();
 
-            foreach(var i in interfaces)
+            foreach(var i in interfaces.Where(x => !x.Name.Equals("IRuleService")))
             {
                 var methods = i.GetMethods();
                 foreach(var m in methods)
@@ -28,7 +34,5 @@ namespace RuleService
 
             return violations;
         }
-
-
     }
 }
